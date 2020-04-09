@@ -18,8 +18,8 @@ ENV ELASTICSEARCH_PASSWORD ""
 WORKDIR /opt/elastalert
 
 
-RUN apk update && apk upgrade && apk add bash curl tar musl-dev linux-headers g++ libffi-dev libffi openssl-dev && \
-    
+RUN apk update upgrade && apk add bash curl tar musl-dev linux-headers libmagic g++ libffi-dev libffi openssl-dev && \
+    rm -rf /var/cache/apk/* && \
     mkdir -p ${ELASTALERT_PLUGIN_DIRECTORY} && \
     mkdir -p ${RULES_DIRECTORY} && \
     
